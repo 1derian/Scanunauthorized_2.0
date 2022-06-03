@@ -1,0 +1,5 @@
+requests
+pymongo
+pymysql 
+tqdm
+psycopg2-binary 

@@ -299,7 +299,7 @@ if __name__ == '__main__':
         memcached,mongodb,rsync_access,mysql_Empty_pwd,jenkins,jboss,postgres,kibana]
         '''))
 
-    parser.add_argument("-f", "--file", default='host.txt', dest="file", help="input a file")
+    parser.add_argument("-f", "--file", default='ip.txt', dest="file", help="input a file")
     parser.add_argument("-c", "--check", help="input a type")
     args = parser.parse_args()
 

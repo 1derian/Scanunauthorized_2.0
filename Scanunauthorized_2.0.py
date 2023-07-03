@@ -272,17 +272,16 @@ def main(file_path, func):
         "postgres": postgres,
         "kibana": kibana,
     }
+    if (not func_dic.get(func)) and func !="all":
+        print("请输入存在的未授权的poc")
+        return
 
     ipfile = open(file_path, 'r', encoding='utf-8').read().split('\n')
     bar = tqdm(total=len(ipfile) * 14)
     pool = ThreadPoolExecutor(100)
     for target in ipfile:
         target = target.strip()
-        # redis 不同的函数名
-        # 先判断func是否存在
-        if func not in func_dic:
-            print("请输入存在的未授权的poc")
-            return
+
         if func == 'all':
             for k in func_dic:
                 func_name = func_dic.get(k)
